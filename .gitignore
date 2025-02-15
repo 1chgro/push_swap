@@ -1,8 +1,10 @@
 tester
 traces.txt
 checker_Mac
+checker_linux
 pro_checker
 push_swap
 push_swap_test.sh
+push_swap_test_linux.sh
 0
 *.o

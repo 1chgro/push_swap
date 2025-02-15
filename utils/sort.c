@@ -47,7 +47,6 @@ void move_to_b(t_stack **stack_a, t_stack **stack_b)
 {
 	int i = 0;
 	int chunk_size = chunk(stacksize(*stack_a));
-	// printf("%d\n", );
 	while(*stack_a)
 	{
 		if ((*stack_a)->index <= i)
