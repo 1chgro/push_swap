@@ -5,3 +5,4 @@ pro_checker
 push_swap
 push_swap_test.sh
 0
+*.o

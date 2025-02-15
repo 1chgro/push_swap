@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 
 
@@ -36,7 +35,22 @@ int	main(int argc, char **argv)
 	if (is_sorted(stack_a))
 		return (free_stack(&stack_a), 0);
 	indexing(stack_a);
+	t_stack *tmp = stack_a;
+	printf("Before sorting:\n");
+	while(tmp)
+	{
+		printf("num: %d| index: %d\n", tmp->num, tmp->index);
+		tmp = tmp->next;
+	}
 	sort_stack(&stack_a, &stack_b);
+	printf("-----------------------------------\n");
+	printf("After sorting:\n");
+	tmp = stack_b;
+	while(tmp)
+	{
+		printf("num: %d\t\t\t| index: %d\n", tmp->num, tmp->index);
+		tmp = tmp->next;
+	}
 	free_stack(&stack_a);
 	free_stack(&stack_b);
 	return (0);

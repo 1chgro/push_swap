@@ -36,10 +36,41 @@ void	indexing(t_stack *stack_a)
 	}
 }
 
+static int	chunk(int size)
+{
+	if (size > 100)
+		return (34);
+	return (16);
+}
+
+void move_to_b(t_stack **stack_a, t_stack **stack_b)
+{
+	int i = 0;
+	int chunk_size = chunk(stacksize(*stack_a));
+	// printf("%d\n", );
+	while(*stack_a)
+	{
+		if ((*stack_a)->index <= i)
+		{
+			pb(stack_a, stack_b, 0);
+			i++;
+		}
+		else if ((*stack_a)->index < i + chunk_size)
+		{
+			pb(stack_a, stack_b, 0);
+			rb(stack_b, 0);
+			i++;
+		}
+		else
+			ra(stack_a, 0);
+	}
+}
+
+
 void	sort_big(t_stack **stack_a, t_stack **stack_b)
 {
 	move_to_b(stack_a, stack_b);
-	move_to_a(stack_a, stack_b);
+	// move_to_a(stack_a, stack_b);
 }
 
 void	sort_stack(t_stack **stack_a, t_stack **stack_b)
