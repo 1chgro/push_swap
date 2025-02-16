@@ -43,8 +43,8 @@ int	main(int argc, char **argv)
 	// 	tmp = tmp->next;
 	// }
 	sort_stack(&stack_a, &stack_b);
-	printf("-----------------------------------\n");
-	printf("After sorting:\n");
+	// printf("-----------------------------------\n");
+	// printf("After sorting:\n");
 	// tmp = stack_b;
 	// while(tmp)
 	// {

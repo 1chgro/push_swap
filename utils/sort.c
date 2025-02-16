@@ -66,10 +66,62 @@ void move_to_b(t_stack **stack_a, t_stack **stack_b)
 }
 
 
+void	give_position(t_stack	*stack_b)
+{
+	int	i;
+
+	i = 0;
+	while (stack_b)
+	{
+		stack_b->position = i++;
+		stack_b = stack_b->next;
+	}
+}
+
+int	find_max_position(t_stack *stack_b)
+{
+	t_stack	*max;
+
+	max = find_max(stack_b);
+	while (stack_b)
+	{
+		if (stack_b == max)
+			return (stack_b->position);
+		stack_b = stack_b->next;
+	}
+	return (-1);
+}
+
+
+void	move_to_a(t_stack **stack_a, t_stack **stack_b)
+{
+	int	size;
+	int	pos;
+
+	size = stacksize(*stack_b);
+	while (size)
+	{
+		give_position(*stack_b);
+		pos = find_max_position(*stack_b);
+		if (pos <= size / 2)
+		{
+			while (pos--)
+				rb(stack_b, 0);
+		}
+		else
+		{
+			while (pos++ != size)
+				rrb(stack_b, 0);
+		}
+		pa(stack_a, stack_b, 0);
+		size--;
+	}
+}
+
 void	sort_big(t_stack **stack_a, t_stack **stack_b)
 {
 	move_to_b(stack_a, stack_b);
-	// move_to_a(stack_a, stack_b);
+	move_to_a(stack_a, stack_b);
 }
 
 void	sort_stack(t_stack **stack_a, t_stack **stack_b)
