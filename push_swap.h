@@ -28,7 +28,7 @@ typedef struct s_stack
 }	t_stack;
 
 void	free_stack(t_stack **stack);
-void	add_number(t_stack **stack, int num);
+int		add_number(t_stack **stack, int num);
 void	free_stack_and_exit(t_stack **stack);
 void	pa(t_stack **a, t_stack **b, int n);
 void	pb(t_stack **a, t_stack **b, int n);

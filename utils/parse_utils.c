@@ -50,22 +50,23 @@ int	has_duplicates(t_stack *stack)
 	return (0);
 }
 
-void	add_number(t_stack **stack, int num)
+int	add_number(t_stack **stack, int num)
 {
 	t_stack	*new;
 	t_stack	*last;
 
 	new = malloc(sizeof(t_stack));
 	if (!new)
-		return ;
+		return (0);
 	new->num = num;
 	new->index = -1;
 	new->next = NULL;
 	if (!*stack)
 	{
 		*stack = new;
-		return ;
+		return (1);
 	}
 	last = stacklast(*stack);
 	last->next = new;
+	return(1);
 }

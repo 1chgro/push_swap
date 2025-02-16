@@ -59,7 +59,11 @@ t_stack	*validate_and_add_num(char *word, t_stack *stack_a)
 		free(word);
 		free_stack_and_exit(&stack_a);
 	}
-	add_number(&stack_a, num);
+	if (!add_number(&stack_a, num))
+	{
+		free(word);
+		free_stack_and_exit(&stack_a);
+	}
 	free(word);
 	return (stack_a);
 }
