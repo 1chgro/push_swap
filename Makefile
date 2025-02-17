@@ -1,7 +1,8 @@
 NAME= push_swap
+
 SRCS= push_swap.c\
-	utils/operations/push.c\
 	utils/operations/reverse.c\
+	utils/operations/push.c\
 	utils/operations/rotate.c\
 	utils/operations/swap.c\
 	utils/ft_atoi.c\

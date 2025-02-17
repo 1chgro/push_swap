@@ -54,7 +54,7 @@ void move_to_b(t_stack **stack_a, t_stack **stack_b)
 			pb(stack_a, stack_b, 0);
 			i++;
 		}
-		else if ((*stack_a)->index < i + chunk_size)
+		else if ((*stack_a)->index <= (i + chunk_size))
 		{
 			pb(stack_a, stack_b, 0);
 			rb(stack_b, 0);
