@@ -18,7 +18,6 @@
 # include <unistd.h>
 #include <stdio.h>
 
-
 typedef struct s_stack
 {
 	int					num;
@@ -47,11 +46,15 @@ void	sort_four(t_stack **stack_a, t_stack **stack_b);
 void	sort_five(t_stack **stack_a, t_stack **stack_b);
 void	sort_big(t_stack **stack_a, t_stack **stack_b);
 void	sort_stack(t_stack **stack_a, t_stack **stack_b);
-void	indexing(t_stack *stack_a);
+void	assign_indxs(t_stack *stack_a);
+void	assign_position(t_stack	*stack_b);
+void	move_to_a(t_stack **stack_a, t_stack **stack_b);
+void	move_to_b(t_stack **stack_a, t_stack **stack_b);
 int		is_sorted(t_stack *stack_a);
 int		is_number(char *str);
 int		has_duplicates(t_stack *stack);
 int		stacksize(t_stack *stack);
+// int		is_comb(t_stack *stack_a, int size);
 long	ft_atoi(const char *str);
 t_stack	*parse_args(int argc, char **argv);
 t_stack	*find_max(t_stack *stack_a);

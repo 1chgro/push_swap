@@ -9,8 +9,10 @@ SRCS= push_swap.c\
 	utils/parse.c\
 	utils/parse_utils.c\
 	utils/sort_utils.c\
-	utils/sort_little.c\
-	utils/sort.c
+	utils/sort_five_and_less.c\
+	utils/sort.c\
+	utils/assign_indx_and_pos.c\
+	utils/sort_more_than_five.c\
 
 OBJS= $(SRCS:.c=.o)
 FLAGS = -Wall -Wextra -Werror

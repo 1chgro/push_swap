@@ -68,5 +68,5 @@ int	add_number(t_stack **stack, int num)
 	}
 	last = stacklast(*stack);
 	last->next = new;
-	return(1);
+	return (1);
 }
