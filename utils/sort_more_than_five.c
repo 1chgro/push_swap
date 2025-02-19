@@ -7,7 +7,7 @@ static int	chunk(int size)
 	return (16);
 }
 
-static int	is_comb(t_stack *stack_a, int size)
+static int	is_comb(t_stack *stack_a)
 {
 	int	dif;
 	int	count;
@@ -20,7 +20,7 @@ static int	is_comb(t_stack *stack_a, int size)
 			count++;
 		stack_a = stack_a->next;
 	}
-	if (count * 10 >= size * 6)
+	if (count >= 15)
 		return (1);
 	return (0);
 }
@@ -44,7 +44,7 @@ void move_to_b(t_stack **stack_a, t_stack **stack_b)
 {
 	int	i;
 	int	chunk_size;
-	
+
 	chunk_size = chunk(stacksize(*stack_a));
 	i = 0;
 	while(*stack_a)
@@ -60,7 +60,7 @@ void move_to_b(t_stack **stack_a, t_stack **stack_b)
 			rb(stack_b, 0);
 			i++;
 		}
-		else if (is_comb(*stack_a, stacksize(*stack_a)))
+		else if (is_comb(*stack_a))
 			rra(stack_a, 0);
 		else
 			ra(stack_a, 0);
