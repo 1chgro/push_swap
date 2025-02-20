@@ -1,38 +1,52 @@
 NAME= push_swap
+FLAGS = -Wall -Wextra -Werror
 
-SRCS= push_swap.c\
-	utils/operations/reverse.c\
-	utils/operations/push.c\
-	utils/operations/rotate.c\
-	utils/operations/swap.c\
-	utils/ft_atoi.c\
-	utils/stack_utils.c\
-	utils/parse.c\
-	utils/parse_utils.c\
-	utils/sort_utils.c\
-	utils/sort_five_and_less.c\
-	utils/sort.c\
-	utils/assign_indx_and_pos.c\
-	utils/sort_more_than_five.c\
+SRCS= mandatory/push_swap.c\
+	mandatory/utils/operations/reverse.c\
+	mandatory/utils/operations/push.c\
+	mandatory/utils/operations/rotate.c\
+	mandatory/utils/operations/swap.c\
+	mandatory/utils/ft_atoi.c\
+	mandatory/utils/stack_utils.c\
+	mandatory/utils/parse.c\
+	mandatory/utils/parse_utils.c\
+	mandatory/utils/sort_utils.c\
+	mandatory/utils/sort_five_and_less.c\
+	mandatory/utils/sort.c\
+	mandatory/utils/assign_indx_and_pos.c\
+	mandatory/utils/sort_more_than_five.c
 
 OBJS= $(SRCS:.c=.o)
-FLAGS = -Wall -Wextra -Werror
+
+
+BNS_SRCS= bonus/checker.c\
+		bonus/get_next_line/get_next_line.c bonus/get_next_line/get_next_line_utils.c\
+		bonus/ft_atoi.c bonus/parse_bonus.c bonus/parse_utils_bonus.c\
+		bonus/stack_utils_bonus.c bonus/ft_split.c
+
+BNS_HDRS= bonus/push_swap_bonus.h bonus/get_next_line/get_next_line.h
+
+BNS_OBJS=$(BNS_SRCS:.c=.o)
 
 all : $(NAME)
 
-$(NAME): $(OBJS) push_swap.h
+
+$(NAME): $(OBJS) mandatory/push_swap.h
 	@cc  ${FLAGS} ${OBJS} -o $(NAME)
 	@echo "Done: excutable is ready"
+
+bonus: $(BNS_OBJS) $(BNS_HDRS)
+	cc ${FLAGS} ${BNS_OBJS} -o checker
 
 %.o:%.c 
 	@cc $(FLAGS) -c $< -o $@
 
 clean:
-	@rm -rf $(OBJS)
+	@rm -rf $(OBJS) $(BNS_OBJS)
 	@echo "Done: cleaning objects"
 
 fclean: clean
-	@rm -rf $(NAME)
+	@rm -rf $(NAME) checker
 	@echo "Done: cleaned all"
 
 re: fclean all
