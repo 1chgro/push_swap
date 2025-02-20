@@ -26,5 +26,20 @@ int	has_duplicates(t_stack *stack);
 int	add_number(t_stack **stack, int num);
 int	is_number(char *str);
 char	**ft_split(char const *s, char c);
+int	ft_strcmp(const char *s1, const char *s2);
+void	free_stack(t_stack **stack);
+int	stacksize(t_stack *stack);
+
+void	pa(t_stack **a, t_stack **b, int n);
+void	pb(t_stack **a, t_stack **b, int n);
+void	ss(t_stack **a, t_stack **b, int n);
+void	rr(t_stack **a, t_stack **b, int n);
+void	rrr(t_stack **a, t_stack **b, int n);
+void	sa(t_stack **a, int n);
+void	sb(t_stack **b, int n);
+void	ra(t_stack **a, int n);
+void	rb(t_stack **b, int n);
+void	rra(t_stack **a, int n);
+void	rrb(t_stack **b, int n);
 
 #endif

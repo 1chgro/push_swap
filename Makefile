@@ -19,10 +19,11 @@ SRCS= mandatory/push_swap.c\
 OBJS= $(SRCS:.c=.o)
 
 
-BNS_SRCS= bonus/checker.c\
+BNS_SRCS= bonus/checker_bonus.c\
 		bonus/get_next_line/get_next_line.c bonus/get_next_line/get_next_line_utils.c\
-		bonus/ft_atoi.c bonus/parse_bonus.c bonus/parse_utils_bonus.c\
-		bonus/stack_utils_bonus.c bonus/ft_split.c
+		bonus/libft/ft_atoi.c bonus/parse_bonus.c bonus/parse_utils_bonus.c\
+		bonus/stack_utils_bonus.c bonus/libft/ft_split.c bonus/libft/ft_strcmp.c\
+		bonus/operations/push_bonus.c bonus/operations/reverse_bonus.c bonus/operations/rotate_bonus.c bonus/operations/swap_bonus.c
 
 BNS_HDRS= bonus/push_swap_bonus.h bonus/get_next_line/get_next_line.h
 

@@ -1,4 +1,4 @@
-#include "push_swap_bonus.h"
+#include "../push_swap_bonus.h"
 
 static size_t	count_words(const char *s, char c)
 {
