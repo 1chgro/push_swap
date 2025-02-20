@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort_more_than_five.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: olachgue <olachgue@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/20 18:40:18 by olachgue          #+#    #+#             */
+/*   Updated: 2025/02/20 18:41:47 by olachgue         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../push_swap.h"
 
 static int	chunk(int size)
@@ -39,15 +51,14 @@ int	find_max_position(t_stack *stack_b)
 	return (-1);
 }
 
-
-void move_to_b(t_stack **stack_a, t_stack **stack_b)
+void	move_to_b(t_stack **stack_a, t_stack **stack_b)
 {
 	int	i;
 	int	chunk_size;
 
 	chunk_size = chunk(stacksize(*stack_a));
 	i = 0;
-	while(*stack_a)
+	while (*stack_a)
 	{
 		if ((*stack_a)->index <= i)
 		{

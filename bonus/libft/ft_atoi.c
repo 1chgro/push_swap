@@ -6,11 +6,11 @@
 /*   By: olachgue <olachgue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 12:45:37 by olachgue          #+#    #+#             */
-/*   Updated: 2025/02/20 02:35:54 by olachgue         ###   ########.fr       */
+/*   Updated: 2025/02/20 18:38:13 by olachgue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap_bonus.h"
+#include "../checker_bonus.h"
 
 static int	skip_spaces_and_check_sign(int *i, const char *str)
 {
