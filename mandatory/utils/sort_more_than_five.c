@@ -6,7 +6,7 @@
 /*   By: olachgue <olachgue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 18:40:18 by olachgue          #+#    #+#             */
-/*   Updated: 2025/02/20 18:41:47 by olachgue         ###   ########.fr       */
+/*   Updated: 2025/02/23 15:52:43 by olachgue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static int	chunk(int size)
 {
 	if (size > 100)
-		return (34);
+		return (33);
 	return (16);
 }
 
@@ -32,7 +32,7 @@ static int	is_comb(t_stack *stack_a)
 			count++;
 		stack_a = stack_a->next;
 	}
-	if (count >= 15)
+	if (count >= 16)
 		return (1);
 	return (0);
 }

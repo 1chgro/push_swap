@@ -6,29 +6,20 @@
 /*   By: olachgue <olachgue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 18:31:58 by olachgue          #+#    #+#             */
-/*   Updated: 2025/02/20 18:37:09 by olachgue         ###   ########.fr       */
+/*   Updated: 2025/02/23 17:07:38 by olachgue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker_bonus.h"
 
-int	is_instruction(char *s, int flag)
+int	is_instruction(char *s)
 {
-	if (flag != 0)
-	{
-		return (!ft_strcmp(s, "sa\n") || !ft_strcmp(s, "sb\n")
-			|| !ft_strcmp(s, "ra\n") || !ft_strcmp(s, "rb\n")
-			|| !ft_strcmp(s, "pa\n") || !ft_strcmp(s, "pb\n")
-			|| !ft_strcmp(s, "rra\n") || !ft_strcmp(s, "rrb\n")
-			|| !ft_strcmp(s, "ss\n") || !ft_strcmp(s, "rr\n")
-			|| !ft_strcmp(s, "rrr\n"));
-	}
-	return (!ft_strcmp(s, "sa") || !ft_strcmp(s, "sb")
-		|| !ft_strcmp(s, "ra") || !ft_strcmp(s, "rb")
-		|| !ft_strcmp(s, "pa") || !ft_strcmp(s, "pb")
-		|| !ft_strcmp(s, "rra") || !ft_strcmp(s, "rrb")
-		|| !ft_strcmp(s, "ss") || !ft_strcmp(s, "rr")
-		|| !ft_strcmp(s, "rrr"));
+	return (!ft_strcmp(s, "sa\n") || !ft_strcmp(s, "sb\n")
+		|| !ft_strcmp(s, "ra\n") || !ft_strcmp(s, "rb\n")
+		|| !ft_strcmp(s, "pa\n") || !ft_strcmp(s, "pb\n")
+		|| !ft_strcmp(s, "rra\n") || !ft_strcmp(s, "rrb\n")
+		|| !ft_strcmp(s, "ss\n") || !ft_strcmp(s, "rr\n")
+		|| !ft_strcmp(s, "rrr\n"));
 }
 
 void	free_inst_err(char *inst, char *input_line, t_stack **stack_a)
@@ -50,10 +41,12 @@ char	*read_instructions(t_stack **stack_a)
 	instructions = NULL;
 	while (input_line)
 	{
-		if (!is_instruction(input_line, 1))
+		if (!is_instruction(input_line))
 			free_inst_err(instructions, input_line, stack_a);
 		tmp = instructions;
 		instructions = ft_strjoin(tmp, input_line);
+		if (!instructions)
+			return (free(input_line), (NULL));
 		free(input_line);
 		input_line = get_next_line(0);
 	}

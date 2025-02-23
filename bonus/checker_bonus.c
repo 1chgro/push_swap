@@ -6,7 +6,7 @@
 /*   By: olachgue <olachgue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 18:31:54 by olachgue          #+#    #+#             */
-/*   Updated: 2025/02/20 18:35:28 by olachgue         ###   ########.fr       */
+/*   Updated: 2025/02/23 17:09:00 by olachgue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,13 @@ void	sort_check(t_stack **stack_a, t_stack **stack_b, char *moves)
 	int		i;
 
 	i = 0;
+	if (!moves)
+		free(moves);
 	arr = ft_split(moves, '\n');
 	free(moves);
 	while (arr && arr[i])
 	{
-		if (is_instruction(arr[i], 0))
-			do_instruction(stack_a, stack_b, arr[i]);
-		else
-		{
-			free_arr(arr);
-			free_stack(stack_a);
-			free_stack(stack_b);
-			write(2, "Error\n", 6);
-			exit(1);
-		}
+		do_instruction(stack_a, stack_b, arr[i]);
 		i++;
 	}
 	free_arr(arr);

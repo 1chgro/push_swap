@@ -6,7 +6,7 @@
 /*   By: olachgue <olachgue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 18:31:49 by olachgue          #+#    #+#             */
-/*   Updated: 2025/02/20 18:34:09 by olachgue         ###   ########.fr       */
+/*   Updated: 2025/02/23 17:08:04 by olachgue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	ra(t_stack **a, int n);
 void	rb(t_stack **b, int n);
 void	rra(t_stack **a, int n);
 void	rrb(t_stack **b, int n);
-int		is_instruction(char *s, int flag);
+int		is_instruction(char *s);
 void	free_inst_err(char *inst, char *input_line, t_stack **stack_a);
 char	*read_instructions(t_stack **stack_a);
 void	free_arr(char **arr);
