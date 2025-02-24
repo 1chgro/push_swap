@@ -1,5 +1,5 @@
 NAME= push_swap
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -fsanitize=address
 
 SRCS= mandatory/push_swap.c\
 	mandatory/utils/operations/reverse.c\
@@ -21,16 +21,16 @@ OBJS= $(SRCS:.c=.o)
 
 BNS_SRCS= bonus/checker_bonus.c\
 		bonus/get_next_line/get_next_line.c bonus/get_next_line/get_next_line_utils.c\
-		bonus/libft/ft_atoi.c bonus/parse_bonus.c bonus/parse_utils_bonus.c\
-		bonus/stack_utils_bonus.c bonus/libft/ft_split.c bonus/libft/ft_strcmp.c\
-		bonus/operations/push_bonus.c bonus/operations/reverse_bonus.c bonus/operations/rotate_bonus.c bonus/operations/swap_bonus.c\
-		bonus/check_utils_bonus.c
+		bonus/libft/ft_atoi_bonus.c bonus/parse_bonus.c bonus/parse_utils_bonus.c\
+		bonus/stack_utils_bonus.c bonus/libft/ft_split_bonus.c bonus/libft/ft_strcmp_bonus.c\
+		bonus/operations/push_bonus.c bonus/operations/reverse_bonus.c \
+		bonus/operations/rotate_bonus.c bonus/operations/swap_bonus.c bonus/check_utils_bonus.c
 
 BNS_HDRS= bonus/checker_bonus.h bonus/get_next_line/get_next_line.h
 
 BNS_OBJS=$(BNS_SRCS:.c=.o)
 
-all : $(NAME)
+all: $(NAME)
 
 
 $(NAME): $(OBJS) mandatory/push_swap.h

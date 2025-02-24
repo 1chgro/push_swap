@@ -6,7 +6,7 @@
 /*   By: olachgue <olachgue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 04:21:54 by olachgue          #+#    #+#             */
-/*   Updated: 2025/02/15 05:25:50 by olachgue         ###   ########.fr       */
+/*   Updated: 2025/02/24 08:36:09 by olachgue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ int		is_sorted(t_stack *stack_a);
 int		is_number(char *str);
 int		has_duplicates(t_stack *stack);
 int		stacksize(t_stack *stack);
-// int		is_comb(t_stack *stack_a, int size);
 long	ft_atoi(const char *str);
 t_stack	*parse_args(int argc, char **argv);
 t_stack	*find_max(t_stack *stack_a);

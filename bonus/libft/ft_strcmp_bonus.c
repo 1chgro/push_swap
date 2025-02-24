@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_strcmp_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olachgue <olachgue@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/07 22:33:38 by olachgue          #+#    #+#             */
-/*   Updated: 2025/02/23 18:21:11 by olachgue         ###   ########.fr       */
+/*   Created: 2025/02/20 18:28:21 by olachgue          #+#    #+#             */
+/*   Updated: 2025/02/23 18:21:46 by olachgue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../checker_bonus.h"
 
-int	main(int argc, char **argv)
+int	ft_strcmp(const char *s1, const char *s2)
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
-
-	if (argc < 2)
-		return (0);
-	stack_b = NULL;
-	stack_a = parse_args(argc, argv);
-	if (!stack_a)
-		return (write(2, "Error\n", 6), 1);
-	if (is_sorted(stack_a))
-		return (free_stack(&stack_a), 0);
-	assign_indxs(stack_a);
-	sort_stack(&stack_a, &stack_b);
-	free_stack(&stack_a);
-	free_stack(&stack_b);
-	return (0);
+	while (*s1 && (*s1 == *s2))
+	{
+		s1++;
+		s2++;
+	}
+	return ((unsigned char)*s1 - (unsigned char)*s2);
 }
